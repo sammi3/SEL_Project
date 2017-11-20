@@ -18,6 +18,8 @@ namespace SoftwareEngineering_Project
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            DBConnection.ConnectionStr = Properties.Settings.Default.HospitalDBConnection;
+
             Application.Run(new LoginPage());
         }
     }

@@ -14,7 +14,7 @@ namespace SoftwareEngineering_Project
     {
         private Login login;
         private MainMenu loginSuccess;
-        private string staffID;
+        private string username;
         private string password;
 
         public LoginPage()
@@ -24,10 +24,10 @@ namespace SoftwareEngineering_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            staffID = staffIDText.Text;
+            username = usernameText.Text;
             password = passwordText.Text;
 
-            login = new Login(staffID, password);
+            login = new Login(username, password);
 
             if(login.checkLogin() == true)
             {
@@ -36,6 +36,22 @@ namespace SoftwareEngineering_Project
                 this.Owner = loginSuccess;
                 this.Hide();
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void LoginPage_Load(object sender, EventArgs e)
+        {
+            DataSet dsPerson = DBConnection.getDBConnectionInstance().getDataSet("SELECT username, password from USERS");
+
+            //get the table to be displayed from the data set
+            DataTable dtPerson = dsPerson.Tables[0];
+
+            //set the data source for the data grid view
+            dataGridView1.DataSource = dtPerson;
         }
     }
 }

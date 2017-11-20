@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.staffIDText = new System.Windows.Forms.TextBox();
+            this.usernameText = new System.Windows.Forms.TextBox();
             this.passwordText = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // staffIDText
+            // usernameText
             // 
-            this.staffIDText.Location = new System.Drawing.Point(171, 94);
-            this.staffIDText.Name = "staffIDText";
-            this.staffIDText.Size = new System.Drawing.Size(239, 20);
-            this.staffIDText.TabIndex = 0;
+            this.usernameText.Location = new System.Drawing.Point(171, 94);
+            this.usernameText.Name = "usernameText";
+            this.usernameText.Size = new System.Drawing.Size(239, 20);
+            this.usernameText.TabIndex = 0;
             // 
             // passwordText
             // 
@@ -58,16 +60,28 @@
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(405, 146);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(163, 106);
+            this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 261);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordText);
-            this.Controls.Add(this.staffIDText);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Controls.Add(this.usernameText);
+            this.Name = "LoginPage";
+            this.Text = "Please Login";
+            this.Load += new System.EventHandler(this.LoginPage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -75,9 +89,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox staffIDText;
+        private System.Windows.Forms.TextBox usernameText;
         private System.Windows.Forms.TextBox passwordText;
         private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
