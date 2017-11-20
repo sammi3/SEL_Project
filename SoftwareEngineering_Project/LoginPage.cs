@@ -38,20 +38,8 @@ namespace SoftwareEngineering_Project
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void LoginPage_Load(object sender, EventArgs e)
         {
-            DataSet dsPerson = DBConnection.getDBConnectionInstance().getDataSet("SELECT firstName, lastName, city from PATIENTS");
-
-            //get the table to be displayed from the data set
-            DataTable dtPerson = dsPerson.Tables[0];
-
-            //set the data source for the data grid view
-            dataGridView1.DataSource = dtPerson;
         }
     }
 }

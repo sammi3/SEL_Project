@@ -24,27 +24,27 @@ namespace SoftwareEngineering_Project
 
         private void PatientsMenu_Load(object sender, EventArgs e)
         {
-            DataSet dsPerson = DBConnection.getDBConnectionInstance().getDataSet("SELECT * from PATIENTS");
+            dataGridSet("SELECT * from PATIENTS");
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            if (patientIDTextbox.TextLength > 0)
+            {
+                string sqlString = "SELECT * from PATIENTS Where PATIENTID = '" + patientIDTextbox.Text + "'";
+                dataGridSet(sqlString);
+            }
+        }
+
+        private void dataGridSet(string sqlString)
+        {
+            DataSet dsPerson = DBConnection.getDBConnectionInstance().getDataSet(sqlString);
 
             //get the table to be displayed from the data set
             DataTable dtPerson = dsPerson.Tables[0];
 
             //set the data source for the data grid view
             patientDGV.DataSource = dtPerson;
-        }
-
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            if(patientIDTextbox.TextLength > 0)
-            {
-                DataSet dsPerson = DBConnection.getDBConnectionInstance().getDataSet("SELECT * from PATIENTS Where PATIENTID = '"+patientIDTextbox.Text+"'");
-
-                //get the table to be displayed from the data set
-                DataTable dtPerson = dsPerson.Tables[0];
-
-                //set the data source for the data grid view
-                patientDGV.DataSource = dtPerson;
-            }
         }
     }
 }
