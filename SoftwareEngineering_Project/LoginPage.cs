@@ -45,7 +45,7 @@ namespace SoftwareEngineering_Project
 
         private void LoginPage_Load(object sender, EventArgs e)
         {
-            DataSet dsPerson = DBConnection.getDBConnectionInstance().getDataSet("SELECT username, password from USERS");
+            DataSet dsPerson = DBConnection.getDBConnectionInstance().getDataSet("SELECT firstName, lastName, city from PATIENTS");
 
             //get the table to be displayed from the data set
             DataTable dtPerson = dsPerson.Tables[0];

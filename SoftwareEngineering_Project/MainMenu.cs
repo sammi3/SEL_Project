@@ -17,19 +17,12 @@ namespace SoftwareEngineering_Project
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void patientsMenuButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
+            PatientsMenu patientMenu = new PatientsMenu();
+            this.Owner = patientMenu;
+            this.Hide();
+            patientMenu.Show();
         }
     }
 }

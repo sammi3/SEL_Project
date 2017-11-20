@@ -37,14 +37,14 @@
             // 
             // usernameText
             // 
-            this.usernameText.Location = new System.Drawing.Point(171, 94);
+            this.usernameText.Location = new System.Drawing.Point(226, 161);
             this.usernameText.Name = "usernameText";
             this.usernameText.Size = new System.Drawing.Size(239, 20);
             this.usernameText.TabIndex = 0;
             // 
             // passwordText
             // 
-            this.passwordText.Location = new System.Drawing.Point(171, 120);
+            this.passwordText.Location = new System.Drawing.Point(226, 197);
             this.passwordText.Name = "passwordText";
             this.passwordText.PasswordChar = '*';
             this.passwordText.Size = new System.Drawing.Size(239, 20);
@@ -52,7 +52,7 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(256, 155);
+            this.loginButton.Location = new System.Drawing.Point(312, 237);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(75, 23);
             this.loginButton.TabIndex = 2;
@@ -63,9 +63,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(405, 146);
+            this.dataGridView1.Location = new System.Drawing.Point(471, 213);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(163, 106);
+            this.dataGridView1.Size = new System.Drawing.Size(221, 168);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -73,7 +73,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 261);
+            this.ClientSize = new System.Drawing.Size(704, 393);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordText);
