@@ -102,5 +102,17 @@ namespace SoftwareEngineering_Project
             this.Close();
             prevPage[0].Show();
         }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            dateValChanged = false;
+            patientIDTextbox.Clear();
+            fNameText.Clear();
+            lastNameText.Clear();
+            dateTimePicker.Value = DateTime.Now;
+            address1Text.Clear();
+            postCodeText.Clear();
+            dataGridSet("SELECT * FROM Patients");
+        }
     }
 }

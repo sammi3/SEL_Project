@@ -44,15 +44,16 @@
             this.postCodeLabel = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.backButton = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.patientDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // patientDGV
             // 
             this.patientDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.patientDGV.Location = new System.Drawing.Point(12, 56);
+            this.patientDGV.Location = new System.Drawing.Point(12, 69);
             this.patientDGV.Name = "patientDGV";
-            this.patientDGV.Size = new System.Drawing.Size(397, 295);
+            this.patientDGV.Size = new System.Drawing.Size(397, 275);
             this.patientDGV.TabIndex = 0;
             this.patientDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patientDGV_CellContentClick);
             // 
@@ -176,7 +177,7 @@
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(479, 358);
+            this.backButton.Location = new System.Drawing.Point(12, 358);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(75, 23);
             this.backButton.TabIndex = 18;
@@ -184,11 +185,22 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(479, 358);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 19;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
             // PatientsMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 393);
+            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.postCodeLabel);
@@ -232,5 +244,6 @@
         private System.Windows.Forms.Label postCodeLabel;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button clearButton;
     }
 }
