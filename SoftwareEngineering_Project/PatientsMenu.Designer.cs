@@ -43,21 +43,22 @@
             this.postCodeText = new System.Windows.Forms.TextBox();
             this.postCodeLabel = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.backButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.patientDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // patientDGV
             // 
             this.patientDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.patientDGV.Location = new System.Drawing.Point(48, 84);
+            this.patientDGV.Location = new System.Drawing.Point(12, 56);
             this.patientDGV.Name = "patientDGV";
-            this.patientDGV.Size = new System.Drawing.Size(323, 280);
+            this.patientDGV.Size = new System.Drawing.Size(397, 295);
             this.patientDGV.TabIndex = 0;
             this.patientDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patientDGV_CellContentClick);
             // 
             // patientIDTextbox
             // 
-            this.patientIDTextbox.Location = new System.Drawing.Point(120, 35);
+            this.patientIDTextbox.Location = new System.Drawing.Point(479, 69);
             this.patientIDTextbox.Name = "patientIDTextbox";
             this.patientIDTextbox.Size = new System.Drawing.Size(200, 20);
             this.patientIDTextbox.TabIndex = 3;
@@ -65,7 +66,7 @@
             // patientIDLabel
             // 
             this.patientIDLabel.AutoSize = true;
-            this.patientIDLabel.Location = new System.Drawing.Point(54, 38);
+            this.patientIDLabel.Location = new System.Drawing.Point(417, 72);
             this.patientIDLabel.Name = "patientIDLabel";
             this.patientIDLabel.Size = new System.Drawing.Size(60, 13);
             this.patientIDLabel.TabIndex = 4;
@@ -73,14 +74,14 @@
             // 
             // fNameText
             // 
-            this.fNameText.Location = new System.Drawing.Point(479, 35);
+            this.fNameText.Location = new System.Drawing.Point(479, 119);
             this.fNameText.Name = "fNameText";
             this.fNameText.Size = new System.Drawing.Size(200, 20);
             this.fNameText.TabIndex = 5;
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(595, 233);
+            this.searchButton.Location = new System.Drawing.Point(604, 358);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 6;
@@ -91,7 +92,7 @@
             // firstNameLabel
             // 
             this.firstNameLabel.AutoSize = true;
-            this.firstNameLabel.Location = new System.Drawing.Point(413, 38);
+            this.firstNameLabel.Location = new System.Drawing.Point(417, 122);
             this.firstNameLabel.Name = "firstNameLabel";
             this.firstNameLabel.Size = new System.Drawing.Size(60, 13);
             this.firstNameLabel.TabIndex = 7;
@@ -99,7 +100,7 @@
             // 
             // lastNameText
             // 
-            this.lastNameText.Location = new System.Drawing.Point(479, 64);
+            this.lastNameText.Location = new System.Drawing.Point(479, 145);
             this.lastNameText.Name = "lastNameText";
             this.lastNameText.Size = new System.Drawing.Size(200, 20);
             this.lastNameText.TabIndex = 8;
@@ -107,7 +108,7 @@
             // lastNameLabel
             // 
             this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Location = new System.Drawing.Point(412, 67);
+            this.lastNameLabel.Location = new System.Drawing.Point(416, 148);
             this.lastNameLabel.Name = "lastNameLabel";
             this.lastNameLabel.Size = new System.Drawing.Size(61, 13);
             this.lastNameLabel.TabIndex = 9;
@@ -116,7 +117,7 @@
             // andLabel
             // 
             this.andLabel.AutoSize = true;
-            this.andLabel.Location = new System.Drawing.Point(434, 91);
+            this.andLabel.Location = new System.Drawing.Point(447, 188);
             this.andLabel.Name = "andLabel";
             this.andLabel.Size = new System.Drawing.Size(30, 13);
             this.andLabel.TabIndex = 10;
@@ -125,7 +126,7 @@
             // orLabel
             // 
             this.orLabel.AutoSize = true;
-            this.orLabel.Location = new System.Drawing.Point(434, 145);
+            this.orLabel.Location = new System.Drawing.Point(454, 258);
             this.orLabel.Name = "orLabel";
             this.orLabel.Size = new System.Drawing.Size(23, 13);
             this.orLabel.TabIndex = 12;
@@ -133,7 +134,7 @@
             // 
             // address1Text
             // 
-            this.address1Text.Location = new System.Drawing.Point(479, 170);
+            this.address1Text.Location = new System.Drawing.Point(479, 298);
             this.address1Text.Name = "address1Text";
             this.address1Text.Size = new System.Drawing.Size(200, 20);
             this.address1Text.TabIndex = 13;
@@ -141,7 +142,7 @@
             // address1Label
             // 
             this.address1Label.AutoSize = true;
-            this.address1Label.Location = new System.Drawing.Point(415, 173);
+            this.address1Label.Location = new System.Drawing.Point(417, 301);
             this.address1Label.Name = "address1Label";
             this.address1Label.Size = new System.Drawing.Size(60, 13);
             this.address1Label.TabIndex = 14;
@@ -149,7 +150,7 @@
             // 
             // postCodeText
             // 
-            this.postCodeText.Location = new System.Drawing.Point(479, 196);
+            this.postCodeText.Location = new System.Drawing.Point(479, 324);
             this.postCodeText.Name = "postCodeText";
             this.postCodeText.Size = new System.Drawing.Size(200, 20);
             this.postCodeText.TabIndex = 15;
@@ -157,26 +158,38 @@
             // postCodeLabel
             // 
             this.postCodeLabel.AutoSize = true;
-            this.postCodeLabel.Location = new System.Drawing.Point(413, 199);
+            this.postCodeLabel.Location = new System.Drawing.Point(415, 327);
             this.postCodeLabel.Name = "postCodeLabel";
             this.postCodeLabel.Size = new System.Drawing.Size(62, 13);
             this.postCodeLabel.TabIndex = 16;
             this.postCodeLabel.Text = "Post Code: ";
+            this.postCodeLabel.Click += new System.EventHandler(this.postCodeLabel_Click);
             // 
             // dateTimePicker
             // 
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker.Location = new System.Drawing.Point(479, 112);
+            this.dateTimePicker.Location = new System.Drawing.Point(479, 217);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker.TabIndex = 17;
             this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
+            // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(479, 358);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(75, 23);
+            this.backButton.TabIndex = 18;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // PatientsMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 393);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.postCodeLabel);
             this.Controls.Add(this.postCodeText);
@@ -218,5 +231,6 @@
         private System.Windows.Forms.TextBox postCodeText;
         private System.Windows.Forms.Label postCodeLabel;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Button backButton;
     }
 }

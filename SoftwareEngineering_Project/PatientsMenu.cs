@@ -31,35 +31,46 @@ namespace SoftwareEngineering_Project
 
         private void searchButton_Click(object sender, EventArgs e)
         {
+            string sqlString;
             string fName;
             string lName;
             string pID;
+            bool canBuild = false;
 
             pID = patientIDTextbox.Text;
             fName = fNameText.Text;
             lName = lastNameText.Text;
 
+            sqlString = "SELECT * from PATIENTS WHERE ";
+
             if (patientIDTextbox.TextLength > 0)
             {
-                string sqlString = "SELECT * from PATIENTS Where PATIENTID = '" + pID + "'";
-                dataGridSet(sqlString);
+                sqlString += "PATIENTID = '" + pID + "'";
+                canBuild = true;
             }
-            else
+            if (((fNameText.TextLength > 0) && (lastNameText.TextLength > 0)) && (((address1Text.TextLength > 0) && (postCodeText.TextLength > 0)) || (dateValChanged)))
             {
-                if((fNameText.TextLength > 0) && (lastNameText.TextLength > 0))
+                if(patientIDTextbox.TextLength > 0)
                 {
-                    if(dateValChanged)
-                    {
-                        string sqlString = "SELECT * from PATIENTS where firstNAME = '" + fName + "' AND lastName = '" + lName + "' AND dateOfBirth = '" + dateTimePicker.Value.ToString("M/d/yyyy") + "'";
-                        dataGridSet(sqlString);
-                    }
-                    else if((address1Text.TextLength > 0) && (postCodeText.TextLength > 0))
-                    {
-                        string sqlString = "SELECT * from PATIENTS where firstName = '" + fName + "' AND lastName = '" + lName + "' AND address1 = '" + address1Text.Text + "' AND postcode = '" + postCodeText.Text + "'";
-                        dataGridSet(sqlString);
-                    }
-                }                        
+                    sqlString += "AND firstNAME = '" + fName + "' AND lastName = '" + lName + "'";
+                }
+                else
+                {
+                    sqlString += "firstNAME = '" + fName + "' AND lastName = '" + lName + "'";
+                }
+
+                if(dateValChanged)
+                {
+                    sqlString += "AND dateOfBirth = '" + dateTimePicker.Value.ToString("M/d/yyyy") + "'";
+                }
+                if ((address1Text.TextLength > 0) && (postCodeText.TextLength > 0))
+                {
+                    sqlString += "AND address1 = '" + address1Text.Text + "' AND postcode = '" + postCodeText.Text + "'";
+                }
+                canBuild = true;
             }
+
+            if(canBuild) dataGridSet(sqlString);
         }
 
         private void dataGridSet(string sqlString)
@@ -76,6 +87,20 @@ namespace SoftwareEngineering_Project
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
         {
             dateValChanged = true;
+        }
+
+        private void postCodeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            Form[] prevPage;
+            prevPage = this.OwnedForms;
+            this.RemoveOwnedForm(prevPage[0]);
+            this.Close();
+            prevPage[0].Show();
         }
     }
 }
