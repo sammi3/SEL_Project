@@ -12,6 +12,8 @@ namespace SoftwareEngineering_Project
 {
     public partial class PatientsMenu : Form
     {
+        static bool dateValChanged = false;
+
         public PatientsMenu()
         {
             InitializeComponent();
@@ -29,10 +31,29 @@ namespace SoftwareEngineering_Project
 
         private void searchButton_Click(object sender, EventArgs e)
         {
+            string fName;
+            string lName;
+            string pID;
+
+            pID = patientIDTextbox.Text;
+            fName = fNameText.Text;
+            lName = lastNameText.Text;
+
             if (patientIDTextbox.TextLength > 0)
             {
-                string sqlString = "SELECT * from PATIENTS Where PATIENTID = '" + patientIDTextbox.Text + "'";
+                string sqlString = "SELECT * from PATIENTS Where PATIENTID = '" + pID + "'";
                 dataGridSet(sqlString);
+            }
+            else
+            {
+                if((fNameText.TextLength > 0) && (lastNameText.TextLength > 0))
+                {
+                    if(dateValChanged)
+                    {
+                        string sqlString = "SELECT * from PATIENTS where firstNAME = '" + fName + "' AND lastName = '" + lName + "' AND dateOfBirth = '" + dateTimePicker.Value.ToString("M/d/yyyy") + "'";
+                        dataGridSet(sqlString);
+                    }
+                }                        
             }
         }
 
@@ -45,6 +66,11 @@ namespace SoftwareEngineering_Project
 
             //set the data source for the data grid view
             patientDGV.DataSource = dtPerson;
+        }
+
+        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            dateValChanged = true;
         }
     }
 }

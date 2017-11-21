@@ -37,12 +37,12 @@
             this.lastNameText = new System.Windows.Forms.TextBox();
             this.lastNameLabel = new System.Windows.Forms.Label();
             this.andLabel = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.orLabel = new System.Windows.Forms.Label();
             this.address1Text = new System.Windows.Forms.TextBox();
             this.address1Label = new System.Windows.Forms.Label();
             this.postCodeText = new System.Windows.Forms.TextBox();
             this.postCodeLabel = new System.Windows.Forms.Label();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.patientDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +80,7 @@
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(538, 348);
+            this.searchButton.Location = new System.Drawing.Point(595, 233);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 6;
@@ -122,16 +122,10 @@
             this.andLabel.TabIndex = 10;
             this.andLabel.Text = "AND";
             // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(459, 113);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 11;
-            // 
             // orLabel
             // 
             this.orLabel.AutoSize = true;
-            this.orLabel.Location = new System.Drawing.Point(434, 276);
+            this.orLabel.Location = new System.Drawing.Point(434, 145);
             this.orLabel.Name = "orLabel";
             this.orLabel.Size = new System.Drawing.Size(23, 13);
             this.orLabel.TabIndex = 12;
@@ -139,7 +133,7 @@
             // 
             // address1Text
             // 
-            this.address1Text.Location = new System.Drawing.Point(479, 296);
+            this.address1Text.Location = new System.Drawing.Point(479, 170);
             this.address1Text.Name = "address1Text";
             this.address1Text.Size = new System.Drawing.Size(200, 20);
             this.address1Text.TabIndex = 13;
@@ -147,7 +141,7 @@
             // address1Label
             // 
             this.address1Label.AutoSize = true;
-            this.address1Label.Location = new System.Drawing.Point(413, 299);
+            this.address1Label.Location = new System.Drawing.Point(415, 173);
             this.address1Label.Name = "address1Label";
             this.address1Label.Size = new System.Drawing.Size(60, 13);
             this.address1Label.TabIndex = 14;
@@ -155,7 +149,7 @@
             // 
             // postCodeText
             // 
-            this.postCodeText.Location = new System.Drawing.Point(479, 322);
+            this.postCodeText.Location = new System.Drawing.Point(479, 196);
             this.postCodeText.Name = "postCodeText";
             this.postCodeText.Size = new System.Drawing.Size(200, 20);
             this.postCodeText.TabIndex = 15;
@@ -163,23 +157,32 @@
             // postCodeLabel
             // 
             this.postCodeLabel.AutoSize = true;
-            this.postCodeLabel.Location = new System.Drawing.Point(411, 325);
+            this.postCodeLabel.Location = new System.Drawing.Point(413, 199);
             this.postCodeLabel.Name = "postCodeLabel";
             this.postCodeLabel.Size = new System.Drawing.Size(62, 13);
             this.postCodeLabel.TabIndex = 16;
             this.postCodeLabel.Text = "Post Code: ";
+            // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker.Location = new System.Drawing.Point(479, 112);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker.TabIndex = 17;
+            this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
             // PatientsMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 393);
+            this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.postCodeLabel);
             this.Controls.Add(this.postCodeText);
             this.Controls.Add(this.address1Label);
             this.Controls.Add(this.address1Text);
             this.Controls.Add(this.orLabel);
-            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.andLabel);
             this.Controls.Add(this.lastNameLabel);
             this.Controls.Add(this.lastNameText);
@@ -209,11 +212,11 @@
         private System.Windows.Forms.TextBox lastNameText;
         private System.Windows.Forms.Label lastNameLabel;
         private System.Windows.Forms.Label andLabel;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label orLabel;
         private System.Windows.Forms.TextBox address1Text;
         private System.Windows.Forms.Label address1Label;
         private System.Windows.Forms.TextBox postCodeText;
         private System.Windows.Forms.Label postCodeLabel;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
     }
 }
