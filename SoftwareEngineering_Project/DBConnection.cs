@@ -84,5 +84,27 @@ namespace SoftwareEngineering_Project
             else return false;
         }
 
+        public void insertAppointment(string sqlQuery, int appointmentID, int patientID, DateTime dateTime, bool status)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlQuery;
+            command.Parameters.Add(new SqlParameter("appointmentID", appointmentID));
+            command.Parameters.Add(new SqlParameter("patientID", patientID));
+            command.Parameters.Add(new SqlParameter("dateAndTime", dateTime));
+            command.Parameters.Add(new SqlParameter("status", status));
+
+
+            openConnection();
+            command.Connection = connectioToDB;
+
+            int noRows = command.ExecuteNonQuery();
+
+            closeConnection();
+
+            Console.WriteLine("n-" + noRows);
+
+        }
+
     }
 }
