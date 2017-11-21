@@ -53,6 +53,11 @@ namespace SoftwareEngineering_Project
                         string sqlString = "SELECT * from PATIENTS where firstNAME = '" + fName + "' AND lastName = '" + lName + "' AND dateOfBirth = '" + dateTimePicker.Value.ToString("M/d/yyyy") + "'";
                         dataGridSet(sqlString);
                     }
+                    else if((address1Text.TextLength > 0) && (postCodeText.TextLength > 0))
+                    {
+                        string sqlString = "SELECT * from PATIENTS where firstName = '" + fName + "' AND lastName = '" + lName + "' AND address1 = '" + address1Text.Text + "' AND postcode = '" + postCodeText.Text + "'";
+                        dataGridSet(sqlString);
+                    }
                 }                        
             }
         }
