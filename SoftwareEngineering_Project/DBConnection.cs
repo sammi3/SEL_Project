@@ -20,7 +20,6 @@ namespace SoftwareEngineering_Project
 
         private SqlDataAdapter dataAdapter;
 
-
         //properties
         public static string ConnectionStr
         {
@@ -29,6 +28,8 @@ namespace SoftwareEngineering_Project
                 connectionString = value;
             }
         }
+
+        public SqlConnection ConnectioToDB { get => connectioToDB; }
 
         //methods
         public static DBConnection getDBConnectionInstance()
@@ -64,7 +65,7 @@ namespace SoftwareEngineering_Project
             openConnection();
 
             //create the data adapter object
-            dataAdapter = new SqlDataAdapter(sqlStatement, connectioToDB);
+            dataAdapter = new SqlDataAdapter(sqlStatement, ConnectioToDB);
 
             //fill in the data set
             dataAdapter.Fill(dataSet);

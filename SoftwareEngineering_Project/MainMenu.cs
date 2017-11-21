@@ -24,5 +24,13 @@ namespace SoftwareEngineering_Project
             this.Hide();
             patientMenu.Show();
         }
+
+        private void appointmentsMenuButton_Click(object sender, EventArgs e)
+        {
+            AppointmentsMenu appointmentsMenu = new AppointmentsMenu();
+            this.Owner = appointmentsMenu;
+            this.Hide();
+            appointmentsMenu.Show();
+        }
     }
 }

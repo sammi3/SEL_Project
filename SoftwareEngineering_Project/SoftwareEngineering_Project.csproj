@@ -61,6 +61,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppointmentsMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppointmentsMenu.Designer.cs">
+      <DependentUpon>AppointmentsMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customType.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
@@ -69,6 +76,11 @@
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs" />
+    <Compile Include="mainDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mainDBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +95,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppointmentsMenu.resx">
+      <DependentUpon>AppointmentsMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +116,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="mainDBDataSet1.xsc">
+      <DependentUpon>mainDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="mainDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mainDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mainDBDataSet1.xss">
+      <DependentUpon>mainDBDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
