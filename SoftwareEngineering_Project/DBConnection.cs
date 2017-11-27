@@ -91,7 +91,7 @@ namespace SoftwareEngineering_Project
             command.CommandText = sqlQuery;
             command.Parameters.Add(new SqlParameter("appointmentID", appointmentID));
             command.Parameters.Add(new SqlParameter("patientID", patientID));
-            command.Parameters.Add(new SqlParameter("dateAndTime", dateTime));
+            command.Parameters.Add("@dateTime", SqlDbType.DateTime).Value = dateTime;
             command.Parameters.Add(new SqlParameter("status", status));
 
 
