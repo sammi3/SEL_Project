@@ -114,5 +114,17 @@ namespace SoftwareEngineering_Project
             closeConnection();
         }
 
+        public void updateAppointment(string sqlCommand,DateTime dateTime)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlCommand;
+            command.Parameters.Add("@dateTime", SqlDbType.DateTime).Value = dateTime;
+            openConnection();
+            command.Connection = connectioToDB;
+            int noRows = command.ExecuteNonQuery();
+            closeConnection();
+        }
+
     }
 }

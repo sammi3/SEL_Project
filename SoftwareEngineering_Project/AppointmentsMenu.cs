@@ -24,10 +24,18 @@ namespace SoftwareEngineering_Project
         private void AppointmentsMenu_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'mainDBDataSet.Appointments' table. You can move, or remove it, as needed.
-            appointmentsDataGrid.DataSource = null;
+            appointmentIDUpdateText.ReadOnly = true;
+            appointmentIDUpdateText.BackColor = SystemColors.ScrollBar;
+            firstNameText.ReadOnly = true;
+            firstNameText.BackColor = SystemColors.ScrollBar;
+            lastNameText.ReadOnly = true;
+            lastNameText.BackColor = SystemColors.ScrollBar;
+            appointmentsDataGrid.SelectionChanged += new EventHandler(appointmentsDataGrid_SelectionChanged);
             updateAppointmentDgv();
             dateTimePicker.Format = DateTimePickerFormat.Custom;
             dateTimePicker.CustomFormat = "dd/MM/yyyy hh:mm";
+            dateTimePickerUpdate.Format = DateTimePickerFormat.Custom;
+            dateTimePickerUpdate.CustomFormat = "dd/MM/yyyy hh:mm";
         }
 
         private void bookButton_Click(object sender, EventArgs e)
@@ -80,6 +88,48 @@ namespace SoftwareEngineering_Project
 
             //set the data source for the data grid view
             appointmentsDataGrid.DataSource = dtPerson;
+        }
+
+        private void appointmentsDataGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            if(dgv.SelectedRows.Count == 1)
+            {
+                DataGridViewRow dRow = dgv.SelectedRows[0];
+                if (dRow.Cells["appointmentID"].Value.ToString().Length > 0)
+                {
+                    appointmentIDUpdateText.Text = dRow.Cells["appointmentID"].Value.ToString();
+                    firstNameText.Text = dRow.Cells["firstName"].Value.ToString();
+                    lastNameText.Text = dRow.Cells["lastName"].Value.ToString();
+                }
+                else
+                {
+                    appointmentIDUpdateText.Text = "N/A";
+                    firstNameText.Text = "N/A";
+                    lastNameText.Text = "N/A";
+                }
+            }
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            if(!(appointmentIDUpdateText.Text == "N/A"))
+            {
+                string sqlCommand;
+                int appID = Convert.ToInt32(appointmentIDUpdateText.Text);
+                sqlCommand = "UPDATE Appointments SET dateAndTime = @dateTime WHERE appointmentID = '"+appID+"'";
+                DBConnection.getDBConnectionInstance().updateAppointment(sqlCommand, dateTimePickerUpdate.Value);
+                updateAppointmentDgv();
+            }
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            Form[] prevPage;
+            prevPage = this.OwnedForms;
+            this.RemoveOwnedForm(prevPage[0]);
+            this.Close();
+            prevPage[0].Show();
         }
     }
 }
