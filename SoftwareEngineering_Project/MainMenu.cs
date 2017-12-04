@@ -32,5 +32,12 @@ namespace SoftwareEngineering_Project
             this.Hide();
             appointmentsMenu.Show();
         }
+
+        private void staff_button_Click(object sender, EventArgs e)
+        {
+            this.Owner = staffTasks;
+            this.Hide();
+            staffTasks.Show();
+        }
     }
 }

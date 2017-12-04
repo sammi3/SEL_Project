@@ -69,6 +69,12 @@
     </Compile>
     <Compile Include="customType.cs" />
     <Compile Include="DBConnection.cs" />
+    <Compile Include="StaffTasks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffTasks.Designer.cs">
+      <DependentUpon>StaffTasks.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AppointmentsMenu.resx">
       <DependentUpon>AppointmentsMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffTasks.resx">
+      <DependentUpon>StaffTasks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>

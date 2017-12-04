@@ -16,7 +16,7 @@ namespace SoftwareEngineering_Project
 
         private static string connectionString;
 
-        private SqlConnection connectioToDB;
+        private SqlConnection connectionToDB;
 
         private SqlDataAdapter dataAdapter;
 
@@ -29,7 +29,7 @@ namespace SoftwareEngineering_Project
             }
         }
 
-        public SqlConnection ConnectioToDB { get => connectioToDB };
+        public SqlConnection ConnectionToDB { get => connectionToDB };
          
         //methods
         public static DBConnection getDBConnectionInstance()
@@ -44,15 +44,15 @@ namespace SoftwareEngineering_Project
         public void openConnection()
         {
             // create the connection to the database as an instance of SqlConnection
-            connectioToDB = new SqlConnection(connectionString);
+            connectionToDB = new SqlConnection(connectionString);
 
             //open connection
-            connectioToDB.Open();
+            connectionToDB.Open();
         }
 
         public void closeConnection()
         {
-            connectioToDB.Close();
+            connectionToDB.Close();
         }
 
 
@@ -65,7 +65,7 @@ namespace SoftwareEngineering_Project
             openConnection();
 
             //create the data adapter object
-            dataAdapter = new SqlDataAdapter(sqlStatement, ConnectioToDB);
+            dataAdapter = new SqlDataAdapter(sqlStatement, ConnectionToDB);
 
             //fill in the data set
             dataAdapter.Fill(dataSet);
@@ -96,7 +96,7 @@ namespace SoftwareEngineering_Project
 
 
             openConnection();
-            command.Connection = connectioToDB;
+            command.Connection = connectionToDB;
 
             int noRows = command.ExecuteNonQuery();
 
@@ -109,7 +109,7 @@ namespace SoftwareEngineering_Project
             command.CommandType = CommandType.Text;
             command.CommandText = sqlCommand;
             openConnection();
-            command.Connection = connectioToDB;
+            command.Connection = connectionToDB;
             int noRows = command.ExecuteNonQuery();
             closeConnection();
         }
@@ -121,7 +121,7 @@ namespace SoftwareEngineering_Project
             command.CommandText = sqlCommand;
             command.Parameters.Add("@dateTime", SqlDbType.DateTime).Value = dateTime;
             openConnection();
-            command.Connection = connectioToDB;
+            command.Connection = connectionToDB;
             int noRows = command.ExecuteNonQuery();
             closeConnection();
         }

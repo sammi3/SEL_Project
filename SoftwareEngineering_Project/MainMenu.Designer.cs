@@ -30,6 +30,7 @@
         {
             this.patientsMenuButton = new System.Windows.Forms.Button();
             this.appointmentsMenuButton = new System.Windows.Forms.Button();
+            this.staff_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // patientsMenuButton
@@ -52,11 +53,22 @@
             this.appointmentsMenuButton.UseVisualStyleBackColor = true;
             this.appointmentsMenuButton.Click += new System.EventHandler(this.appointmentsMenuButton_Click);
             // 
+            // staff_button
+            // 
+            this.staff_button.Location = new System.Drawing.Point(353, 69);
+            this.staff_button.Name = "staff_button";
+            this.staff_button.Size = new System.Drawing.Size(96, 96);
+            this.staff_button.TabIndex = 2;
+            this.staff_button.Text = "Staff";
+            this.staff_button.UseVisualStyleBackColor = true;
+            this.staff_button.Click += new System.EventHandler(this.staff_button_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 393);
+            this.Controls.Add(this.staff_button);
             this.Controls.Add(this.appointmentsMenuButton);
             this.Controls.Add(this.patientsMenuButton);
             this.Name = "MainMenu";
@@ -69,5 +81,6 @@
 
         private System.Windows.Forms.Button patientsMenuButton;
         private System.Windows.Forms.Button appointmentsMenuButton;
+        private System.Windows.Forms.Button staff_button;
     }
 }
