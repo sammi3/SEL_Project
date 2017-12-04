@@ -101,9 +101,17 @@ namespace SoftwareEngineering_Project
             int noRows = command.ExecuteNonQuery();
 
             closeConnection();
+        }
 
-            Console.WriteLine("n-" + noRows);
-
+        public void cancelAppointment(string sqlCommand)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlCommand;
+            openConnection();
+            command.Connection = connectioToDB;
+            int noRows = command.ExecuteNonQuery();
+            closeConnection();
         }
 
     }
