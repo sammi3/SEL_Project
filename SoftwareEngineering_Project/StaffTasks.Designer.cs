@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ST_StaffIDSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ST_StaffIDSearchButton = new System.Windows.Forms.Button();
+            this.ST_Clear = new System.Windows.Forms.Button();
             this.searchPanel = new System.Windows.Forms.Panel();
             this.dataGridView_StaffTasks = new System.Windows.Forms.DataGridView();
-            this.mainDBDataSet = new SoftwareEngineering_Project.mainDBDataSet();
-            this.appointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appointmentsTableAdapter = new SoftwareEngineering_Project.mainDBDataSetTableAdapters.AppointmentsTableAdapter();
             this.appointmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateAndTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.appointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mainDBDataSet = new SoftwareEngineering_Project.mainDBDataSet();
+            this.appointmentsTableAdapter = new SoftwareEngineering_Project.mainDBDataSetTableAdapters.AppointmentsTableAdapter();
             this.dateTimePicker_StaffTasks = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.searchPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_StaffTasks)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainDBDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // ST_StaffIDSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(61, 11);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(107, 20);
-            this.textBox1.TabIndex = 0;
+            this.ST_StaffIDSearch.Location = new System.Drawing.Point(61, 11);
+            this.ST_StaffIDSearch.Name = "ST_StaffIDSearch";
+            this.ST_StaffIDSearch.Size = new System.Drawing.Size(107, 20);
+            this.ST_StaffIDSearch.TabIndex = 0;
             // 
             // label1
             // 
@@ -67,30 +67,31 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Staff ID";
             // 
-            // button1
+            // ST_StaffIDSearchButton
             // 
-            this.button1.Location = new System.Drawing.Point(109, 53);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ST_StaffIDSearchButton.Location = new System.Drawing.Point(109, 53);
+            this.ST_StaffIDSearchButton.Name = "ST_StaffIDSearchButton";
+            this.ST_StaffIDSearchButton.Size = new System.Drawing.Size(75, 23);
+            this.ST_StaffIDSearchButton.TabIndex = 2;
+            this.ST_StaffIDSearchButton.Text = "Search";
+            this.ST_StaffIDSearchButton.UseVisualStyleBackColor = true;
+            this.ST_StaffIDSearchButton.Click += new System.EventHandler(this.ST_StaffIDSearchButton_Click);
             // 
-            // button2
+            // ST_Clear
             // 
-            this.button2.Location = new System.Drawing.Point(15, 53);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Clear";
-            this.button2.UseVisualStyleBackColor = true;
+            this.ST_Clear.Location = new System.Drawing.Point(15, 53);
+            this.ST_Clear.Name = "ST_Clear";
+            this.ST_Clear.Size = new System.Drawing.Size(75, 23);
+            this.ST_Clear.TabIndex = 3;
+            this.ST_Clear.Text = "Clear";
+            this.ST_Clear.UseVisualStyleBackColor = true;
             // 
             // searchPanel
             // 
-            this.searchPanel.Controls.Add(this.button2);
-            this.searchPanel.Controls.Add(this.button1);
+            this.searchPanel.Controls.Add(this.ST_Clear);
+            this.searchPanel.Controls.Add(this.ST_StaffIDSearchButton);
             this.searchPanel.Controls.Add(this.label1);
-            this.searchPanel.Controls.Add(this.textBox1);
+            this.searchPanel.Controls.Add(this.ST_StaffIDSearch);
             this.searchPanel.Location = new System.Drawing.Point(12, 12);
             this.searchPanel.Name = "searchPanel";
             this.searchPanel.Size = new System.Drawing.Size(203, 97);
@@ -111,20 +112,6 @@
             this.dataGridView_StaffTasks.Name = "dataGridView_StaffTasks";
             this.dataGridView_StaffTasks.Size = new System.Drawing.Size(253, 146);
             this.dataGridView_StaffTasks.TabIndex = 5;
-            // 
-            // mainDBDataSet
-            // 
-            this.mainDBDataSet.DataSetName = "mainDBDataSet";
-            this.mainDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // appointmentsBindingSource
-            // 
-            this.appointmentsBindingSource.DataMember = "Appointments";
-            this.appointmentsBindingSource.DataSource = this.mainDBDataSet;
-            // 
-            // appointmentsTableAdapter
-            // 
-            this.appointmentsTableAdapter.ClearBeforeFill = true;
             // 
             // appointmentIDDataGridViewTextBoxColumn
             // 
@@ -149,6 +136,20 @@
             this.statusDataGridViewCheckBoxColumn.DataPropertyName = "status";
             this.statusDataGridViewCheckBoxColumn.HeaderText = "status";
             this.statusDataGridViewCheckBoxColumn.Name = "statusDataGridViewCheckBoxColumn";
+            // 
+            // appointmentsBindingSource
+            // 
+            this.appointmentsBindingSource.DataMember = "Appointments";
+            this.appointmentsBindingSource.DataSource = this.mainDBDataSet;
+            // 
+            // mainDBDataSet
+            // 
+            this.mainDBDataSet.DataSetName = "mainDBDataSet";
+            this.mainDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // appointmentsTableAdapter
+            // 
+            this.appointmentsTableAdapter.ClearBeforeFill = true;
             // 
             // dateTimePicker_StaffTasks
             // 
@@ -179,8 +180,8 @@
             this.searchPanel.ResumeLayout(false);
             this.searchPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_StaffTasks)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainDBDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -188,10 +189,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ST_StaffIDSearch;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ST_StaffIDSearchButton;
+        private System.Windows.Forms.Button ST_Clear;
         private System.Windows.Forms.Panel searchPanel;
         private System.Windows.Forms.DataGridView dataGridView_StaffTasks;
         private mainDBDataSet mainDBDataSet;

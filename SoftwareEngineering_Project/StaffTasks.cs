@@ -28,5 +28,20 @@ namespace SoftwareEngineering_Project
         {
 
         }
+
+        private void ST_StaffIDSearchButton_Click(object sender, EventArgs e)
+        {
+            string sqlString;
+            string staffID_str;
+            bool display = true;
+
+            staffID_str = ST_StaffIDSearch.Text;
+            sqlString = "SELECT from STAFF WHERE ";
+
+            if (ST_StaffIDSearch.TextLength > 0)
+            {
+                if (display) dataGridSet(sqlString);
+            }
+        }
     }
 }

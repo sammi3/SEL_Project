@@ -29,7 +29,7 @@ namespace SoftwareEngineering_Project
             }
         }
 
-        public SqlConnection ConnectionToDB { get => connectionToDB };
+        public SqlConnection ConnectionToDB { get => connectionToDB; };
          
         //methods
         public static DBConnection getDBConnectionInstance()
