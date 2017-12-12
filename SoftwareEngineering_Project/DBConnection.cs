@@ -126,5 +126,25 @@ namespace SoftwareEngineering_Project
             closeConnection();
         }
 
+        public void insertPatient(string sqlCommand, int pID, string firstName, string lastName, string address1, string city, string postCode, string phoneNumber, DateTime dateTime, int gpID)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlCommand;
+            command.Parameters.Add(new SqlParameter("patientID", pID));
+            command.Parameters.Add(new SqlParameter("firstName", firstName));
+            command.Parameters.Add(new SqlParameter("lastName", lastName));
+            command.Parameters.Add(new SqlParameter("address1", address1));
+            command.Parameters.Add(new SqlParameter("city", city));
+            command.Parameters.Add(new SqlParameter("postcode", postCode));
+            command.Parameters.Add(new SqlParameter("phoneNumber", phoneNumber));
+            command.Parameters.Add("@dateOfBirth", SqlDbType.DateTime).Value = dateTime;
+            command.Parameters.Add(new SqlParameter("gpID", gpID));
+            openConnection();
+            command.Connection = connectioToDB;
+            int noRows = command.ExecuteNonQuery();
+            closeConnection();
+        }
+
     }
 }

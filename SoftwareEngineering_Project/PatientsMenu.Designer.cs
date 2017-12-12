@@ -45,6 +45,8 @@
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.backButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
+            this.newPatientButton = new System.Windows.Forms.Button();
+            this.patientTestsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.patientDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +55,7 @@
             this.patientDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.patientDGV.Location = new System.Drawing.Point(12, 69);
             this.patientDGV.Name = "patientDGV";
+            this.patientDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.patientDGV.Size = new System.Drawing.Size(397, 275);
             this.patientDGV.TabIndex = 0;
             this.patientDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patientDGV_CellContentClick);
@@ -195,11 +198,33 @@
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
+            // newPatientButton
+            // 
+            this.newPatientButton.Location = new System.Drawing.Point(334, 358);
+            this.newPatientButton.Name = "newPatientButton";
+            this.newPatientButton.Size = new System.Drawing.Size(75, 23);
+            this.newPatientButton.TabIndex = 20;
+            this.newPatientButton.Text = "New Patient";
+            this.newPatientButton.UseVisualStyleBackColor = true;
+            this.newPatientButton.Click += new System.EventHandler(this.newPatientButton_Click);
+            // 
+            // patientTestsButton
+            // 
+            this.patientTestsButton.Location = new System.Drawing.Point(252, 357);
+            this.patientTestsButton.Name = "patientTestsButton";
+            this.patientTestsButton.Size = new System.Drawing.Size(75, 23);
+            this.patientTestsButton.TabIndex = 21;
+            this.patientTestsButton.Text = "Tests";
+            this.patientTestsButton.UseVisualStyleBackColor = true;
+            this.patientTestsButton.Click += new System.EventHandler(this.patientTestsButton_Click);
+            // 
             // PatientsMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 393);
+            this.Controls.Add(this.patientTestsButton);
+            this.Controls.Add(this.newPatientButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.dateTimePicker);
@@ -219,6 +244,7 @@
             this.Controls.Add(this.patientDGV);
             this.Name = "PatientsMenu";
             this.Text = "PatientsMenu";
+            this.Activated += new System.EventHandler(this.PatientsMenu_Enter);
             this.Load += new System.EventHandler(this.PatientsMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.patientDGV)).EndInit();
             this.ResumeLayout(false);
@@ -245,5 +271,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.Button newPatientButton;
+        private System.Windows.Forms.Button patientTestsButton;
     }
 }

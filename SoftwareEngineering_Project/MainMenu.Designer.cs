@@ -60,7 +60,7 @@
             this.Controls.Add(this.appointmentsMenuButton);
             this.Controls.Add(this.patientsMenuButton);
             this.Name = "MainMenu";
-            this.Text = "LoginSuccess";
+            this.Text = "Main Menu";
             this.ResumeLayout(false);
 
         }

@@ -13,6 +13,7 @@ namespace SoftwareEngineering_Project
     public partial class PatientsMenu : Form
     {
         static bool dateValChanged = false;
+        static int patientTestID = -1;
 
         public PatientsMenu()
         {
@@ -21,12 +22,25 @@ namespace SoftwareEngineering_Project
 
         private void patientDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+        }
 
+        private void patientDGV_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            if (dgv.SelectedRows.Count == 1)
+            {
+                DataGridViewRow dRow = dgv.SelectedRows[0];
+                if (dRow.Cells["patientID"].Value.ToString().Length > 0)
+                {
+                    patientTestID = Convert.ToInt32(dRow.Cells["patientID"].Value.ToString());
+                }
+            }
         }
 
         private void PatientsMenu_Load(object sender, EventArgs e)
         {
             dataGridSet("SELECT * from PATIENTS");
+            patientDGV.SelectionChanged += new EventHandler(patientDGV_SelectionChanged);
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -113,6 +127,26 @@ namespace SoftwareEngineering_Project
             address1Text.Clear();
             postCodeText.Clear();
             dataGridSet("SELECT * FROM Patients");
+        }
+
+        private void newPatientButton_Click(object sender, EventArgs e)
+        {
+            PatientRegistrationMenu patientRegMenu = new PatientRegistrationMenu();
+            patientRegMenu.ShowDialog();
+        }
+
+        private void PatientsMenu_Enter(object sender, EventArgs e)
+        {
+            string sqlString;
+            sqlString = "SELECT * FROM Patients";
+            dataGridSet(sqlString);
+        }
+
+        private void patientTestsButton_Click(object sender, EventArgs e)
+        {
+            PatientsTestMenu ptMenu = new PatientsTestMenu();
+            ptMenu.patientID = patientTestID;
+            ptMenu.ShowDialog();
         }
     }
 }
