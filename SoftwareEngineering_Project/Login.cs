@@ -20,6 +20,7 @@ namespace SoftwareEngineering_Project
 
         public bool checkLogin()
         {
+            //This method calls to the DBConnection instance method userexists using the username and password
             bool test;
             test = DBConnection.getDBConnectionInstance().userExists(username, password);
             if (test) return true;

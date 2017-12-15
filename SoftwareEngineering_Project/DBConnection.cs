@@ -80,7 +80,7 @@ namespace SoftwareEngineering_Project
         {
             DataSet dataSet;
             dataSet = getDataSet("SELECT * FROM USERS WHERE username = '"+username+"' AND password = '"+password+"'");
-            if (dataSet.Tables[0].Rows.Count > 0) return true;
+            if (dataSet.Tables[0].Rows.Count == 1) return true;
             else return false;
         }
 
